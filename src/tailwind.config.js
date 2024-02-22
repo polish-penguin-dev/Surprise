@@ -9,7 +9,7 @@ tailwind.config = {
             },
 
             animation: {
-                scroll: "scroll 10s linear infinite"
+                scroll: "scroll 20s linear infinite"
             }
         }
     }

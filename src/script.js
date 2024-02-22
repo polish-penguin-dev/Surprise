@@ -11,6 +11,17 @@ $("#start").on("click", async (e) => {
     funny();
 });
 
+const list = (obj) => {
+    let list = "";
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            list += `${key}: ${obj[key]}<br>`;
+        }
+    }
+
+    return list;
+}
+
 const funny = async () => {
     const backgrounds = ["funny1.gif", "funny2.gif"];
     const random = backgrounds[Math.floor(Math.random() * backgrounds.length)];
@@ -22,7 +33,7 @@ const funny = async () => {
     $("#text").css("top", cHeight + "px");
 
     const response = await fetch("https://ipapi.co/json/");
-    const data = await response.data;
+    const data = await response.json();
 
-    console.log(data);
+    $("#text").html(list(data));
 };
