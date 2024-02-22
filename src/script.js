@@ -21,7 +21,7 @@ const funny = async () => {
     const cHeight = $("#container").height();
     $("#text").css("top", cHeight + "px");
 
-    const response = await fetch("http://ip-api/json/");
+    const response = await fetch("https://ipapi.co/json/");
     const data = await response.data;
 
     console.log(data);
