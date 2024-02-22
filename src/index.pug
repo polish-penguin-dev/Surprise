@@ -1,0 +1,36 @@
+html(lang="en-GB", class="w-full h-full")
+    head 
+        title= "Surprise!"
+        meta(
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        )
+        meta(charset="UTF-8")
+        link(
+            rel="stylesheet"
+            href="/style.css"
+        )
+        script(src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js")
+        script(src="https://cdn.tailwindcss.com")
+        script(src="/tailwind.config.js")
+    body(class="bg-neutral-800 w-full h-full m-0 bg-cover bg-no-repeat")
+        div(class="flex justify-center items-center w-full h-full")
+            button(
+                id="start"
+                type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-50"
+            ) Surprise..?
+
+            div(
+                id="container"
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full overflow-hidden"
+            )
+                p(
+                    id="text"
+                    class="absolute top-full left-1/2 transform -translate-x-1/2 whitespace-nowrap animate-scroll z-60"
+                )
+
+        audio(id="audio", src="/assets/audio.mp3", loop)
+        script(src="/script.js") 
+            
